@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>诺丁鸭电子宠物</title>
+    <link rel="stylesheet" href="css/popup.css">
+    <!-- KaTeX CSS for LaTeX rendering -->
+    <link rel="stylesheet" href="libs/katex.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <h1 id="duck-title">🦆 高贵人士诺丁鸭</h1>
+            <div class="level-info">
+                <span id="duck-level">等级 1</span>
+                <span id="duck-exp">经验 0/100</span>
+            </div>
+        </header>
+
+        <!-- 诺丁鸭显示区域 -->
+        <div class="duck-container">
+            <div class="duck-wrapper">
+                <img id="duck-image" src="imgs/nottingham_duck_normal.png" alt="诺丁鸭" class="duck-image">
+                <div class="duck-status" id="duck-status">开心</div>
+                <div class="merit-points" id="merit-points">功德: 0</div>
+            </div>
+            
+            <!-- 状态条 -->
+            <div class="status-bars">
+                <div class="status-bar">
+                    <label>饱腹度</label>
+                    <div class="bar">
+                        <div class="bar-fill" id="satiety-bar"></div>
+                    </div>
+                    <span id="satiety-text">80%</span>
+                </div>
+                <div class="status-bar">
+                    <label>心情值</label>
+                    <div class="bar">
+                        <div class="bar-fill" id="mood-bar"></div>
+                    </div>
+                    <span id="mood-text">90%</span>
+                </div>
+                <div class="status-bar">
+                    <label>能量值</label>
+                    <div class="bar">
+                        <div class="bar-fill" id="energy-bar"></div>
+                    </div>
+                    <span id="energy-text">75%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 交互按钮 -->
+        <div class="action-buttons">
+            <button id="feed-btn" class="action-btn">🍎 食物</button>
+            <button id="play-btn" class="action-btn">🎮 玩耍</button>
+            <button id="muyu-btn" class="action-btn">🪷 木鱼</button>
+            <button id="chat-btn" class="action-btn">💬 聊天</button>
+        </div>
+
+        <!-- AI聊天界面 -->
+        <div id="chat-interface" class="chat-interface hidden">
+            <div class="chat-header">
+                <h3>🤖 与诺丁鸭聊天</h3>
+                <button id="close-chat" class="close-btn">&times;</button>
+            </div>
+            <div class="api-key-section">
+                <div class="api-key-header">
+                    <label for="api-key-input">Qwen API Key:</label>
+                    <button id="test-api-btn" class="test-btn">测试</button>
+                </div>
+                <input type="password" id="api-key-input" placeholder="输入你的Qwen API Key..." class="api-key-input">
+                <div class="api-status" id="api-status"></div>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="message ai-message">
+                    <span class="message-avatar">🤖</span>
+                    <div class="message-content">
+                        你好！我是诺丁鸭，很高兴和你聊天！有什么想聊的吗？😊
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="输入消息..." maxlength="200">
+                <button id="send-btn">发送</button>
+            </div>
+        </div>
+
+        <!-- 底部信息 -->
+        <footer class="footer">
+            <div class="time-info">
+                <span id="current-time"></span>
+            </div>
+            <div class="tips">
+                <span id="daily-tip">每天记得照顾诺丁鸭哦！</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- KaTeX JS for LaTeX rendering -->
+    <script src="libs/katex.min.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="libs/marked.min.js"></script>
+    <script src="js/duck-character.js"></script>
+    <script src="js/ai-chat.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+</html>
